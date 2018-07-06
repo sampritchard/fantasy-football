@@ -1,1 +1,28 @@
-LOGIN
+extends layout 
+
+block content 
+  section.section
+    .container
+    form.form(action='/users/login' method='POST')
+      .container
+        h1.title= Login
+        .columns
+          .column.is-half.is-offset-3
+            .field
+              label(for='email').label Username
+                p.control.has-icons-left.has-icons-right
+                  input.input(type='text', name='username' placeholder='User Name')
+                  span.icon.is-small.is-left
+                    i.fa.fa-envelope
+            .field
+              label(for='password').label Password
+                p.control.has-icons-left
+                  input.input(type='password', name='password' placeholder='Password')
+                  span.icon.is-small.is-left
+                    i.fa.fa-lock
+            .control 
+              button.button.is-primary(type='submit') Sign In
+            br
+            p Don't have an account yet?
+              span 
+                a(href='/users/register') Sign Up
