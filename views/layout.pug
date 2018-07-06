@@ -1,0 +1,39 @@
+doctype html
+html
+  head
+    title= title
+    meta(name='viewport', content='width=device-width, initial-scale=1, user=scalable=no')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css')
+    script(src='/scripts/scripts.js')
+
+  body
+    block header
+      .navbar-container
+        .container
+          .navbar.is-transparent
+            .navbar-brand
+              a.navbar-item(href='/')
+              .navbar-burger.burger(data-target='navMenu')
+                span
+                span
+                span
+            #navMenu.navbar-menu
+              .navbar-start
+                a.navbar-item(href='/') Home
+              .navbar-end
+                .navbar-item
+                a#register.button.is-primary(href='/users/register')
+                      span.icon
+                        i.fa.fa-user
+                      span Register
+                       .navbar-item
+                a#login.button.is-primary(href='/users/login')
+                      span.icon
+                        i.fa.fa-user
+                      span Log In
+                       .navbar-item
+                a#logout.button.is-primary(href='/users/logout')
+                      span.icon
+                        i.fa.fa-user
+                      span Log Out
+    block content
