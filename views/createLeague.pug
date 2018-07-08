@@ -1,0 +1,22 @@
+extends layout 
+
+block content 
+  section.section
+    .container
+      h1.title= title
+      .columns
+        .column.is-half.is-offset-one-quarter
+          form(action='/leagues/create' method='POST')
+            .field
+              label(for='name').label League Name
+                .control
+                  input.input(type='text', name='name' placeholder='The Premier League')
+            .field
+              label(for='password').label League Pin
+                p.control.has-icons-left.has-icons-right
+                  input.input(type='password', name='password' placeholder='FootballsComingHome')
+                  span.icon.is-small.is-left
+                    i.fa.fa-envelope
+            .control 
+              button.button.is-primary(type='submit') Create
+          br
