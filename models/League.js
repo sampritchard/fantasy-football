@@ -2,7 +2,7 @@ let mongoose = require('mongoose');
 let bcrypt = require('bcryptjs');
 
 let leagueSchema = mongoose.Schema({
-    leaguename: {
+    name: {
         type: String,
         index: true
     },
@@ -10,7 +10,14 @@ let leagueSchema = mongoose.Schema({
         type: String,
         index: true
     },
+    budget: {
+        type: Number
+    },
+    subpoints: {
+        type: Number
+    }
 })
+
 
 let League = module.exports = mongoose.model('League', leagueSchema);
 
@@ -25,8 +32,8 @@ module.exports.createLeague = (newLeague, callback) => {
     });
 }
 
-module.exports.getLeagueByName = (leaguename, callback) => {
-    let query = { leaguename: leaguename };
+module.exports.getLeagueByName = (name, callback) => {
+    let query = { name: name };
     League.findOne(query, callback);
 }
 

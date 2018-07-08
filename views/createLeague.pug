@@ -15,6 +15,15 @@ block content
               label(for='password').label League Pin
                 p.control.has-icons-left.has-icons-right
                   input.input(type='password', name='password' placeholder='FootballsComingHome')
+            p.title Options
+             .field
+              label(for='budget').label Budget
+                p.control.has-icons-left.has-icons-right
+                  input.input(type='number', max='250' name='budget', placeholder='150')
+             .field
+              label(for='subpoints').label Subsitute Points
+                p.control.has-icons-left.has-icons-right
+                  input.input(type='number', max='100' name='subpoints', placeholder='50')
                   span.icon.is-small.is-left
                     i.fa.fa-envelope
             .control 
