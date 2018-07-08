@@ -21,6 +21,7 @@ html
               .navbar-start
                 a.navbar-item(href='/') Home
               .navbar-end
+              if !user
                 .navbar-item
                 a#register.button.is-primary(href='/users/register')
                       span.icon
@@ -32,6 +33,7 @@ html
                         i.fa.fa-user
                       span Log In
                        .navbar-item
+              else
                 a#logout.button.is-primary(href='/users/logout')
                       span.icon
                         i.fa.fa-user
