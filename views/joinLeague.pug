@@ -5,7 +5,17 @@ block content
     .hero-body
       .container.has-text-centered
         h1.title What league do you want to join, #{user.name}?
-        table
-            each league in leagues
-                tr#employee_list_item    
-                    td #{league.name}
+    .column
+        each league in leagues 
+            .card 
+            header.card-header
+              p.card-header-title=league.name
+              .card-content
+                .content
+                  p.title Budget
+                  p=league.budget
+                  p.title Sub Points
+                  p=league.subpoints
+              footer.card-footer
+                a.card-footer-item(href=`/leagues/join/${league._id}`) Join
+    br
