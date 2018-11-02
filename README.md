@@ -1,4 +1,7 @@
-## Authentication
+# A Fantasy Football App
+Built using Node, Express, Mongo and Pug.
+
+### Authentication
 - Passport.js for authentication middleware
 - Mongodb
 - Pug
