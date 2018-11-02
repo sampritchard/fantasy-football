@@ -18,7 +18,8 @@ let userSchema = mongoose.Schema({
     },
     name: {
         type: String
-    }
+    },
+    leagueJoined: []
 })
 
 let User = module.exports = mongoose.model('User', userSchema);

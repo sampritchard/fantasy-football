@@ -15,7 +15,8 @@ let leagueSchema = mongoose.Schema({
     },
     subpoints: {
         type: Number
-    }
+    },
+    users: []
 })
 
 
