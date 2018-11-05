@@ -4,4 +4,8 @@ block content
   section.hero.is-primary.is-medium.is-bold
     .hero-body
       .container.has-text-centered
-        h1.title You are part of: #{user.leagueJoined}
+        h1.title You are part of: #{results[0].name}
+
+        p #{results[0].users[0].name}
+        p #{results[0].users[1].name}
+        p #{results[0].users[2].name}

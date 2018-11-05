@@ -24,13 +24,15 @@ router.get('/join/:league_name', ensureAuthenticated, async (req, res) => {
             console.log("Joining a league function is breaking :(");
         }
     }
-    res.redirect('/');
+    res.redirect('/leagues/current');
 })
 
 router.get('/current', ensureAuthenticated, async (req, res) => {
     const user = res.locals.user;
-    console.log(user);
-    res.render('currentLeagues', { user });
+    const leagues = await League.find().populate('league', 'name');
+    const leagueJoined = user.leagueJoined.toString();
+    const results = leagues.filter(function (leagueName) { return leagueName.name === leagueJoined; });
+    res.render('currentLeagues', { user, results });
 })
 
 router.get('/join', ensureAuthenticated, async (req, res) => {
